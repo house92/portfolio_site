@@ -18,7 +18,7 @@ export default class HomePage extends Component {
     });
 
     return (
-      <Header>
+      <Header className="home">
         <Image src="/assets/background-2.png" alt="Sam House - web developer" className="main-img" />
           <h1 className="hidden">Sam House - web developer</h1>
 

@@ -1,24 +1,41 @@
-body {
+@import 'colours';
+
+html, body {
   overflow-x: hidden;
+  background-color: map-get($colours, faded-orange);
 }
 
-.project {
-  img {
-    width: 90%;
-    margin: 10rem;
-    box-shadow: -3rem 2rem 2rem rgba(51, 51, 51, 0.8);
-  }
-  .blurb {
-    margin: 15rem 0;
-    padding: 0 8rem 0 5rem;
-    a {
-      font-weight: 600;
-      &:hover {
-        text-decoration: none;
+#wrap {
+  background-color: map-get($colours, faded-orange);
+}
+
+.projects {
+  color: map-get($colours, dark-grey);
+  .project {
+    img {
+      width: 90%;
+      margin: 10rem;
+      @media (max-width: 991px) {
+        margin: 4rem;
       }
+      box-shadow: -3rem 2rem 2rem rgba(51, 51, 51, 0.8);
     }
-    p {
-      margin-top: 2rem;
+    .blurb {
+      margin: 15rem 0;
+      padding: 0 8rem 0 5rem;
+      @media (max-width: 991px) {
+        margin: 0 0 10rem;
+        padding: 0 8rem;
+      }
+      a {
+        font-weight: 600;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      p {
+        margin-top: 2rem;
+      }
     }
   }
 }

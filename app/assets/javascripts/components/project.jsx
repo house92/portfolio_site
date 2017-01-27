@@ -18,7 +18,7 @@ export default class Project extends Component {
     return (
       <div className="project">
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={10} xsOffset={1} md={6} mdOffset={0}>
             <a href={project.url}><Image src={`/assets/${project.image}`} /></a>
           </Col>
           <Col xs={12} md={6} className="blurb text-center">

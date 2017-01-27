@@ -18,7 +18,7 @@ export default class SnippetsContainer extends Component {
     return (
       <Header>
         <Row className="faded-orange">
-          <Col className="text-center" xs={12} sm={8} smOffset={2} md={8} mdOffset={2}>
+          <Col className="text-center" xs={12} sm={10} smOffset={1} md={8} mdOffset={2}>
             <Well>
               <Row>
                 <h1>Snippets</h1>

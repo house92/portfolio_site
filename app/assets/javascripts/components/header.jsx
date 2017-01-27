@@ -18,10 +18,10 @@ export default class Header extends Component {
       <span>
         <Headroom>
         <Row>
-          <Col md={3} mdOffset={1}>
+          <Col sm={3} smOffset={1} md={3} mdOffset={1}>
             <a href="/"><Image width="100rem" src="/assets/cartoonMe.png" circle /></a>
           </Col>
-          <Col className="pull-right" md={4} mdOffset={3} lg={4} lgOffset={4} style={{ marginTop: "3rem" }}>
+          <Col className="pull-right" sm={5} smOffset={2} md={4} mdOffset={3} lg={4} lgOffset={4} style={{ marginTop: "3rem" }}>
             <Nav bsStyle="pills" activeKey={this.state.active} onClick={this.handleClick}>
               <NavItem eventKey={1} href="/">About</NavItem>
               <NavItem eventKey={2} href="/projects">Projects</NavItem>
@@ -32,7 +32,7 @@ export default class Header extends Component {
         </Headroom>
 
         {this.props.children}
-        
+
       </span>
     );
   }

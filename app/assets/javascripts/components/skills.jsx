@@ -66,38 +66,61 @@ export default class Skills extends Component {
   handleClick(e) {
     switch (e.target.dataset.name) {
       case design.name:
-        this.setState({info: design });
+        this.setState({info: design }, () => {
+          document.getElementById('insert-title').className = `title ${this.state.info.name.toLowerCase()}`;
+        });
         break;
       case development.name:
-        this.setState({info: development });
+        this.setState({info: development }, () => {
+          document.getElementById('insert-title').className = `title ${this.state.info.name.toLowerCase()}`;
+        });
         break;
       case audience.name:
-        this.setState({info: audience });
+        this.setState({info: audience }, () => {
+          document.getElementById('insert-title').className = `title ${this.state.info.name.toLowerCase()}`;
+        });
         break;
     }
   }
 
   rotate(e) {
-    e.target.className += ` rotated`;
-    var title = document.getElementById(`${e.target.dataset.name.toLowerCase()}Title`);
-    fadeIn(title);
-    title.style.transform = `translateX(40rem)`;
+    if (window.innerWidth >= 992) {
+      e.target.className += ` rotated`;
+      var title = document.getElementById(`${e.target.dataset.name.toLowerCase()}Title`);
+      fadeIn(title);
+      title.style.transform = `translateX(40rem)`;
+    }
   }
 
   unrotate(e) {
-    e.target.className = e.target.className.replace(/ rotated/, ``);
-    var title = document.getElementById(`${e.target.dataset.name.toLowerCase()}Title`);
-    fadeOut(title);
-    title.style.transform = `translateX(-40rem)`;
+    if (window.innerWidth >= 992) {
+      e.target.className = e.target.className.replace(/ rotated/, ``);
+      var title = document.getElementById(`${e.target.dataset.name.toLowerCase()}Title`);
+      fadeOut(title);
+      title.style.transform = `translateX(-40rem)`;
+    }
   }
 
   render() {
+    window.addEventListener('resize', () => {
+      var infoName = document.getElementById('insert-title');
+      if (window.innerWidth < 992) {
+        infoName.textContent = this.state.info.name;
+        infoName.className = `title ${this.state.info.name.toLowerCase()}`;
+      } else {
+        infoName.textContent = null;
+      }
+    });
     var skills = [design, development, audience];
     var skillsDiv = skills.map((skill, i) => {
       return (
         <li key={`skill${i + 1}`}>
-          <h3 id={`${skill.name.toLowerCase()}Title`} className={`title`}>{skill.name}</h3>
-          <Image src={`/assets/${skill.image}`} circle className={`rotate${skill.name == this.state.info.name ? ' selected' : ''}`} data-name={skill.name} onClick={this.handleClick} onMouseOver={this.rotate} onMouseOut={this.unrotate} />
+          <div className="title-container">
+            <h3 id={`${skill.name.toLowerCase()}Title`} className={`title`}>{skill.name}</h3>
+          </div>
+          <div className="icon-container">
+            <Image src={`/assets/${skill.image}`} circle className={`rotate${skill.name == this.state.info.name ? ' selected' : ''}`} data-name={skill.name} onClick={this.handleClick} onMouseOver={this.rotate} onMouseOut={this.unrotate} />
+          </div>
         </li>
       );
     });
@@ -112,14 +135,29 @@ export default class Skills extends Component {
         </Row>
 
         <Row>
-          <Col md={4}>
+          <Col sm={3} smOffset={0} md={4}>
             <ul className="text-right">
               {skillsDiv}
             </ul>
           </Col>
 
-          <Col md={6} mdOffset={2}>
-            {this.state.info.content}
+          <Col className="skill-content" xs={10} xsOffset={1} sm={6} smOffset={3} md={6} mdOffset={2}>
+            <Row>
+              <Col xs={2} xsOffset={4}>
+                <div className="title-container">
+                  <h3 id={`insert-title`} className={`title ${this.state.info.name.toLowerCase()}`}>{window.innerWidth < 992 ? this.state.info.name : null}</h3>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12}>
+                <div className="content-container">
+                  <span>{this.state.info.content}</span>
+                </div>
+              </Col>
+            </Row>
+
+
           </Col>
         </Row>
       </div>

@@ -4,18 +4,21 @@ html, body {
   height: 100%;
 }
 
-.nav-pills {
-  li {
-    a {
-      color: map-get($colours, orange);
-      font: {
-        size: 16px;
-      }
-    }
-    &.active {
+.headroom-wrapper {
+  padding-top: 1rem;
+  .nav-pills {
+    li {
       a {
-        color: #fff;
-        background-color: map-get($colours, orange) !important;
+        color: map-get($colours, orange);
+        font: {
+          size: 16px;
+        }
+      }
+      &.active {
+        a {
+          color: #fff;
+          background-color: map-get($colours, orange) !important;
+        }
       }
     }
   }
@@ -29,14 +32,20 @@ html, body {
 }
 
 .footer {
-  background:#f3ede9;
+  background: map-get($colours, burnt-grey);
   text-align:center;
   padding: 2rem 5rem;
-  color:#ffab13;
+  color: map-get($colours, white);
   img {
     width: 8rem;
   }
   .nav-pills {
     margin-top: 5rem;
+    a {
+      color: map-get($colours, white);
+      &:hover {
+        color: map-get($colours, orange);
+      }
+    }
   }
 }
