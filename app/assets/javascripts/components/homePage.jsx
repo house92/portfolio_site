@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Nav, NavItem, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Row, Col, Image, Nav, NavItem, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Header from './header.jsx';
 import Skills from './skills.jsx';
 
@@ -24,16 +24,23 @@ export default class HomePage extends Component {
 
           <div className="about">
             <div className="container">
-              <h2>
-                Meet me.<br /><sub>(Sort of.)</sub>
-              </h2>
-              <Image src="/assets/cartoonMe.png" circle />
+              <Row>
+                <h2>
+                  Meet me.<br /><sub>(Sort of.)</sub>
+                </h2>
+              </Row>
 
-              <p>
-                I'm a UK-based web and app developer who loves<br />
-                 helping others - that's you, by the way - to<br />
-                 bring their designs to life.
-              </p>
+              <Row>
+                <Image src="/assets/cartoonMe.png" circle />
+              </Row>
+
+              <Row>
+                <Col xs={12} md={8} mdOffset={2} lg={6} lgOffset={3}>
+                  <p>
+                    I'm a UK-based developer with a passion for creating great code that delivers an enjoyable UX. I love creating engaging front-end interfaces with ReactJS and am excited about continuing to learn more about how to utilise this amazing library, particularly moving forward with ES6! Rails 5 is what most of my server-side work has been done in, but I'm also excited to branch out into Node.
+                  </p>
+                </Col>
+              </Row>
 
             </div>
           </div>

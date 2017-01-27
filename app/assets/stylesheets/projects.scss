@@ -5,5 +5,12 @@
   }
   .blurb {
     margin: 15rem 0;
+    padding: 0 8rem 0 5rem;
+    a {
+      font-weight: 600;
+    }
+    p {
+      margin-top: 2rem;
+    }
   }
 }
