@@ -25,7 +25,7 @@ export default class SnippetsContainer extends Component {
               </Row>
               <Row>
                 <p>
-                  {`Please feel free to use my snippets in any of your projects. You're also welcome to get in touch if you have any suggestions for improving anything!`}
+                  {`Please feel free to use my snippets in any of your projects. You're also welcome to get in touch if you have any suggestions for improving anything! Bash scripts are written for Mac, but I'll try to make them work on Linux where possible.`}
                 </p>
               </Row>
               <Row>

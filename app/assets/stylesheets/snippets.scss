@@ -2,6 +2,7 @@
 
 body {
   background-color: map-get($colours, faded-orange) !important;
+  overflow-x: hidden;
 }
 
 .faded-orange {
