@@ -1,0 +1,42 @@
+@import 'colours';
+
+html, body {
+  height: 100%;
+}
+
+.nav-pills {
+  li {
+    a {
+      color: map-get($colours, orange);
+      font: {
+        size: 16px;
+      }
+    }
+    &.active {
+      a {
+        color: #fff;
+        background-color: map-get($colours, orange) !important;
+      }
+    }
+  }
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -10rem;
+  padding: 0 0 10rem;
+}
+
+.footer {
+  background:#f3ede9;
+  text-align:center;
+  padding: 2rem 5rem;
+  color:#ffab13;
+  img {
+    width: 8rem;
+  }
+  .nav-pills {
+    margin-top: 5rem;
+  }
+}

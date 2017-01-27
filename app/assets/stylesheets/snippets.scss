@@ -1,0 +1,40 @@
+@import 'colours';
+
+body {
+  background-color: map-get($colours, faded-orange) !important;
+}
+
+.faded-orange {
+  background-color: map-get($colours, faded-orange);
+}
+
+.main {
+  h1 {
+    margin-top: 12rem;
+  }
+}
+
+.well {
+  background-color: rgba(247, 247, 247, 0.5) !important;
+  background-image: none !important;
+  box-sizing: border-box;
+  padding: 0 5rem !important;
+  .code {
+    pre {
+      padding: 2rem;
+      margin: 2rem 1rem 1rem;
+      background: map-get($colours, faded-orange);
+      border-radius: 5px;
+    }
+  }
+}
+
+.panel-heading {
+  a {
+    &:hover {
+      text-decoration: none;
+      color: map-get($colours, orange);
+      cursor: pointer;
+    }
+  }
+}

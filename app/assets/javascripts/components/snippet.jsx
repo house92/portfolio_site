@@ -1,0 +1,15 @@
+import React, { Component } from 'react';
+import { Panel } from 'react-bootstrap';
+
+export default class Snippet extends Component {
+  render() {
+    return (
+      <Panel header={this.props.snippet.name} eventKey={this.props.snippetEventKey} defaultExpanded={false} >
+        {this.props.snippet.preface}
+        <div className="code">
+          {this.props.snippet.body}
+        </div>
+      </Panel>
+    );
+  }
+}

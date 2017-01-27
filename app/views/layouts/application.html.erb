@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sam House - web developer </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type ="image/ico" rel="icon" href="/assets/house.ico" />
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', params[:controller], 'data-turbolinks-track': 'reload' %>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+  </head>
+
+  <body>
+    <div id="wrap">
+
+    <%= yield %>
+
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-left">
+            <span><strong>Built with:</strong></span>
+            <img src="/assets/React-JS.png" />
+          </div>
+          <div class="col-md-4 col-md-offset-4">
+            <ul class="nav nav-pills">
+              <li role="presentation" class=""><a href="http://www.github.com/house92">Github</a></li>
+              <li role="presentation" class=""><a href="https://www.linkedin.com/in/sam-house-021b91129">LinkedIn</a></li>
+              <li role="presentation" class=""><a href="https://twitter.com/shouse_92">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
