@@ -5,8 +5,9 @@ import Header from './header.jsx';
 export default class SnippetsContainer extends Component {
   render() {
     var snippetPanels = this.props.snippets.map((snippet, i) => {
+      var expanded = i == 0;
       return (
-        <Panel header={snippet.name} eventKey={i + 1} key={`snippet${i + 1}`} defaultExpanded={i == 0 ? `true` : `false`} >
+        <Panel header={snippet.name} eventKey={i + 1} key={`snippet${i + 1}`} defaultExpanded={expanded} >
           {snippet.preface}
           <div className="code">
             <pre>{unescape(snippet.body)}</pre>
@@ -28,7 +29,7 @@ export default class SnippetsContainer extends Component {
                 </p>
               </Row>
               <Row>
-                <Accordion className="text-left">
+                <Accordion className="text-left" defaultActiveKey={1}>
                   {snippetPanels}
                 </Accordion>
               </Row>
