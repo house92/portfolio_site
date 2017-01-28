@@ -6,12 +6,35 @@ html, body {
 
 .headroom-wrapper {
   padding-top: 1rem;
+  img {
+    @media (max-width: 609px) {
+      margin-left: 1rem;
+    }
+    @media (min-width: 610px) and (max-width: 767px) {
+      margin-left: 5rem;
+    }
+  }
   .nav-pills {
+    @media (min-width: 720px) and (max-width: 767px) {
+      margin-left: 20rem;
+    }
+    @media (min-width: 630px) and (max-width: 719px) {
+      margin-left: 15rem;
+    }
+    @media (min-width: 560px) and (max-width: 629px) {
+      margin-left: 10rem;
+    }
+    @media (max-width: 559px) {
+      margin-left: 0;
+    }
     li {
       a {
         color: map-get($colours, orange);
         font: {
           size: 16px;
+        }
+        @media (max-width: 439px) {
+          font-size: 14px;
         }
       }
       &.active {
@@ -36,8 +59,13 @@ html, body {
   text-align:center;
   padding: 2rem 5rem;
   color: map-get($colours, white);
-  img {
-    width: 8rem;
+  .built-with {
+    @media(max-width: 439px) {
+      display: none;
+    }
+    img {
+      width: 8rem;
+    }
   }
   .nav-pills {
     margin-top: 5rem;

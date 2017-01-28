@@ -22,6 +22,11 @@ html, body {
 
 .well {
   background-color: rgba(247, 247, 247, 0.5) !important;
+  @media (max-width: 439px) {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
   background-image: none !important;
   box-sizing: border-box;
   padding: 0 5rem !important;

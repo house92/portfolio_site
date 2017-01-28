@@ -15,10 +15,14 @@ html, body {
     img {
       width: 90%;
       margin: 10rem;
-      @media (max-width: 991px) {
+      box-shadow: -3rem 2rem 2rem rgba(51, 51, 51, 0.8);
+      @media (max-width: 439px) {
+        margin: 4rem 2rem;
+        box-shadow: -1rem 1rem 2rem 1rem rgba(51, 51, 51, 0.8);
+      }
+      @media (min-width: 440px) and (max-width: 991px) {
         margin: 4rem;
       }
-      box-shadow: -3rem 2rem 2rem rgba(51, 51, 51, 0.8);
     }
     .blurb {
       margin: 15rem 0;
