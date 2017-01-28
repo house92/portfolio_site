@@ -127,7 +127,7 @@ export default class Skills extends Component {
         );
       });
       skillsDiv = (
-        <Row style={{ marginLeft: '-3.5rem' }}>
+        <Row>
           {skillsCols}
         </Row>
       );

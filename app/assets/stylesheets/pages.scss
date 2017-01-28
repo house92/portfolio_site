@@ -8,6 +8,9 @@ html, body {
   background-color: map-get($colours, blue);
   width: 100%;
   margin-top: -11rem;
+  @media (max-width: 339px) {
+    margin-top: -9rem;
+  }
 }
 
 .about {
@@ -56,6 +59,11 @@ html, body {
 }
 
 .support {
+  @media (min-width: 768px) {
+    .container {
+      width: auto;
+    }
+  }
   background: map-get($colours, faded-orange);
   color: map-get($colours, orange);
   padding: 8rem 6rem;
@@ -188,6 +196,9 @@ html, body {
     .info {
       position: absolute;
       margin: 14rem 2rem;
+      @media (min-width: 440px) and (max-width: 767px) {
+        margin: 14rem 0 14rem 2rem;
+      }
       font-size:16px;
       @media (max-width: 439px) {
         margin: 12rem 2rem;
