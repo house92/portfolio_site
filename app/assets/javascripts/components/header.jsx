@@ -15,6 +15,10 @@ export default class Header extends Component {
     this.toggleDrawer = this.toggleDrawer.bind(this);
   }
 
+  componentDidMount() {
+    document.getElementById('wrap').parentElement.style.overflowX = 'hidden';
+  }
+
   handleClick(e) {
     window.location = e.target.href;
   }
@@ -70,7 +74,8 @@ export default class Header extends Component {
     return (
       <Sidebar sidebar={sidebarContent}
                open={this.state.sidebarOpen}
-               onSetOpen={this.onSetSidebarOpen}>
+               onSetOpen={this.onSetSidebarOpen}
+               >
          <div id="wrap">
          <Headroom>
 
