@@ -28,3 +28,5 @@ Snippet.find_or_create_by(name: "Command line tool to configure Cucumber testing
 
 
 Project.find_or_create_by(name: "We Got Singles", url: "https://we-got-singles.herokuapp.com/", repo: "https://github.com/house92/wegotsingles", image: "we-got-singles.png", description: "A dating site produced in collaboration with other students in my cohort in a five-day challenge. We built it with Rails, utilising jQuery on the front end for user interactivity. I predominantly worked on the messaging system, front and back, and certain aspects of the user.")
+
+Project.find_or_create_by(name: "Disaster Map", url: "https://disaster-map.herokuapp.com/", repo: "https://github.com/house92/disaster-map", image: "disaster-map.png", description: "A simple map visualising data on natural disasters. Clicking on an icon will bring up information on the event.")

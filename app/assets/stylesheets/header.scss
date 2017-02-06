@@ -30,6 +30,28 @@ html, body {
   }
 }
 
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+
 .headroom-wrapper {
   padding-top: 1rem;
   .glyphicon {
@@ -98,6 +120,11 @@ html, body {
   height: auto;
   margin: 0 auto -10rem;
   padding: 0 0 10rem;
+  .headroom {
+    min-height: 0;
+    height: auto;
+    margin: auto;
+  }
 }
 
 .footer {
