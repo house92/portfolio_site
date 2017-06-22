@@ -24,9 +24,7 @@ export default class Project extends Component {
           <Col xs={12} md={6} className="blurb text-center">
             <h2>{project.name}</h2>
             {this.repo()}
-            <p>
-              {project.description}
-            </p>
+            <p dangerouslySetInnerHTML={{__html: project.description}}></p>
           </Col>
         </Row>
       </div>
