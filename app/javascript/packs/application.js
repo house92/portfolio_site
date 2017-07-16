@@ -7,7 +7,7 @@
 // To reference this file, add <%#= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import HomePage from "../components/HomePage";
+import HomePage from "../components/homePage";
 import SnippetsContainer from "../components/snippetsContainer";
 import ProjectsContainer from "../components/projectsContainer";
 
