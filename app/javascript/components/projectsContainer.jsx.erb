@@ -3,6 +3,8 @@ import { Row, Col } from 'react-bootstrap';
 import Project from './project.jsx';
 import Header from './header.jsx';
 
+<% helpers = ActionController::Base.helpers %>
+
 export default class ProjectsContainer extends Component {
   render() {
     var projectsDiv = this.props.projects.map((project, i) => {

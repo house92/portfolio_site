@@ -3,7 +3,9 @@ import { Row, Col, Image, Nav, NavItem, OverlayTrigger, Tooltip } from 'react-bo
 import Header from './header.jsx';
 import Skills from './skills.jsx';
 
-const orientation = {landscape: 'background-2.png', portrait: 'background-portrait.png'};
+<% helpers = ActionController::Base.helpers %>
+
+const orientation = {landscape: "<%= helpers.image_path('background-2.png') %>", portrait: "<%= helpers.image_path('background-portrait.png') %>"};
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -37,7 +39,7 @@ export default class HomePage extends Component {
   }
 
   render() {
-    var languages = [{name: "HTML5", image: "HTML5-logo.png"}, {name: "Javascript", image: "javascript.png"}, {name: "ReactJS", image: "dark-reactJS.svg"}, {name: "jQuery", image: "jQuery.png"}, {name: "Ruby", image: "ruby-logo.png"}, {name: "Ruby on Rails", image: "Ruby_on_Rails-logo.png"}, {name: "PostgreSQL", image: "postgresql-logo.png"}];
+    var languages = [{name: "HTML5", image: "<%= helpers.image_path('HTML5-logo.png') %>"}, {name: "Javascript", image: "<%= helpers.image_path('javascript.png') %>"}, {name: "ReactJS", image: "<%= helpers.image_path('dark-reactJS.svg') %>"}, {name: "jQuery", image: "<%= helpers.image_path('jQuery.png') %>"}, {name: "Ruby", image: "<%= helpers.image_path('ruby-logo.png') %>"}, {name: "Ruby on Rails", image: "<%= helpers.image_path('Ruby_on_Rails-logo.png') %>"}, {name: "PostgreSQL", image: "<%= helpers.image_path('postgresql-logo.png') %>"}];
     var firstLanguage;
     var languagesDiv = languages.map((language, i) => {
       var tooltip = <Tooltip id={`tooltip${i + 1}`}>{language.name}</Tooltip>;
@@ -50,7 +52,7 @@ export default class HomePage extends Component {
             <Row key={`language${i + 1}`} style={{ marginBottom: '3rem' }}>
               <Col xs={6} xsOffset={3}>
                 <OverlayTrigger placement="top" overlay={tooltip}>
-                  <Image src={`/assets/${language.image}`} alt={language.name} responsive />
+                  <Image src={language.image} alt={language.name} responsive />
                 </OverlayTrigger>
               </Col>
             </Row>
@@ -60,12 +62,12 @@ export default class HomePage extends Component {
             <Row key={`language${i + 1}`} style={{ marginBottom: '3rem' }}>
               <Col xs={6}>
                 <OverlayTrigger placement="top" overlay={firstLanguage.tooltip}>
-                  <Image src={`/assets/${firstLanguage.image}`} alt={firstLanguage.name} responsive />
+                  <Image src={firstLanguage.image} alt={firstLanguage.name} responsive />
                 </OverlayTrigger>
               </Col>
               <Col xs={6}>
                 <OverlayTrigger placement="top" overlay={tooltip}>
-                  <Image src={`/assets/${language.image}`} alt={language.name} responsive />
+                  <Image src={language.image} alt={language.name} responsive />
                 </OverlayTrigger>
               </Col>
             </Row>
@@ -75,7 +77,7 @@ export default class HomePage extends Component {
         return (
           <li key={`language${i + 1}`}>
             <OverlayTrigger placement="top" overlay={tooltip}>
-              <Image src={`/assets/${language.image}`} alt={language.name} responsive />
+              <Image src={language.image} alt={language.name} responsive />
             </OverlayTrigger>
           </li>
         );
@@ -84,7 +86,7 @@ export default class HomePage extends Component {
 
     return (
       <Header className="home">
-        <Image src={`/assets/${this.state.background}`} alt="Sam House - web developer" className="main-img" />
+        <Image src={this.state.background} alt="Sam House - web developer" className="main-img" />
           <h1 className="hidden">Sam House - web developer</h1>
 
           <div className="about">
@@ -96,7 +98,7 @@ export default class HomePage extends Component {
               </Row>
 
               <Row>
-                <Image src="/assets/cartoonMe.png" circle />
+                <Image src="<%= helpers.image_path('cartoonMe.png') %>" circle />
               </Row>
 
               <Row>

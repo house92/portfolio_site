@@ -3,6 +3,8 @@ import { Row, Col, Nav, NavItem, Image, Glyphicon } from 'react-bootstrap';
 import Headroom from 'react-headroom';
 import Sidebar from 'react-sidebar';
 
+<% helpers = ActionController::Base.helpers %>
+
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +52,7 @@ export default class Header extends Component {
             <Glyphicon glyph="menu-hamburger" onClick={this.toggleDrawer} />
           </Col>
           <Col xs={4} xsOffset={4}>
-            <a href="/"><Image width="80rem" src="/assets/cartoonMe.png" circle /></a>
+            <a href="/"><Image width="80rem" src="<%= helpers.image_path('cartoonMe.png') %>" circle /></a>
           </Col>
         </Row>
       );
@@ -58,7 +60,7 @@ export default class Header extends Component {
       navbar = (
         <Row>
           <Col sm={4} smOffset={1} md={3} mdOffset={1}>
-            <a href="/"><Image width="100rem" src="/assets/cartoonMe.png" circle /></a>
+            <a href="/"><Image width="100rem" src="<%= helpers.image_path('cartoonMe.png') %>" circle /></a>
           </Col>
           <Col className="pull-right" sm={5} smOffset={2} md={4} mdOffset={3} lg={4} lgOffset={4} style={{ marginTop: "3rem" }}>
             <Nav bsStyle="pills" activeKey={this.state.active} onClick={this.handleClick}>
@@ -95,7 +97,7 @@ export default class Header extends Component {
                    <span><strong>{`BUILT WITH`}</strong></span>
                  </Row>
                  <Row>
-                   <Image src="/assets/React-JS.png" />
+                   <Image src="<%= helpers.image_path('React-JS.png') %>" />
                  </Row>
                </Col>
                <Col className="links" xs={11} xsOffset={1} sm={5} smOffset={3} md={4} mdOffset={4} lg={3} lgOffset={6}>

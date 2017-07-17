@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 
+<% helpers = ActionController::Base.helpers %>
+
 export default class Project extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ export default class Project extends Component {
       <div className="project">
         <Row>
           <Col xs={10} xsOffset={1} md={6} mdOffset={0}>
-            <a href={project.url}><Image src={`/assets/${project.image}`} /></a>
+            <a href={project.url}><Image src={project.fingerprinted_image} /></a>
           </Col>
           <Col xs={12} md={6} className="blurb text-center">
             <h2>{project.name}</h2>

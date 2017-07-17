@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 
-const design = {name: 'Design', image: "pencil.png", content: (
+<% helpers = ActionController::Base.helpers %>
+
+const design = {name: 'Design', image: "<%= helpers.image_path('pencil.png') %>", content: (
   <div className="info text-center">
     <p>
       {`I offer creative and relevant design, ensuring the highest level of presentation for your project. The most important thing is that content is simple and direct. You want to come across loud and clear to your end-users.`}
@@ -9,7 +11,7 @@ const design = {name: 'Design', image: "pencil.png", content: (
   </div>
 )};
 
-const development = {name: 'Development', image: "smartphone.png", content: (
+const development = {name: 'Development', image: "<%= helpers.image_path('smartphone.png') %>", content: (
   <div className="info text-center">
     <p>
       {`Staying up-to-date in the ever changing scene of web development is a challenge - that's where I come in. I keep on top of the latest tools and tricks to optimise your end-users' experience. At the same time, you don't want them to drown in gimicks! I'll help you to keep out the clutter.`}
@@ -17,7 +19,7 @@ const development = {name: 'Development', image: "smartphone.png", content: (
   </div>
 )};
 
-const audience = {name: 'Audience', image: "silhouette.png", content: (
+const audience = {name: 'Audience', image: "<%= helpers.image_path('silhouette.png') %>", content: (
   <div className="info text-center">
     <p>
       {`Audience matters. I'm committed to keeping that in mind at every step throughout the design and development processes. Setting up a platform for your music? Sharp, sleek and edgy is the way to go. Floral gift cards? ...Not so much.`}
@@ -121,7 +123,7 @@ export default class Skills extends Component {
         return (
           <Col key={`skill${i + 1}`} xs={12 / skills.length}>
             <div className="icon-container">
-              <Image src={`/assets/${skill.image}`} circle className={`rotate${skill.name == this.state.info.name ? ' selected' : ''}`} data-name={skill.name} onClick={this.handleClick} onMouseOver={this.rotate} onMouseOut={this.unrotate} />
+              <Image src={skill.image} circle className={`rotate${skill.name == this.state.info.name ? ' selected' : ''}`} data-name={skill.name} onClick={this.handleClick} onMouseOver={this.rotate} onMouseOut={this.unrotate} />
             </div>
           </Col>
         );
@@ -139,7 +141,7 @@ export default class Skills extends Component {
               <h3 id={`${skill.name.toLowerCase()}Title`} className={`title`}>{skill.name}</h3>
             </div>
             <div className="icon-container">
-              <Image src={`/assets/${skill.image}`} circle className={`rotate${skill.name == this.state.info.name ? ' selected' : ''}`} data-name={skill.name} onClick={this.handleClick} onMouseOver={this.rotate} onMouseOut={this.unrotate} />
+              <Image src={skill.image} circle className={`rotate${skill.name == this.state.info.name ? ' selected' : ''}`} data-name={skill.name} onClick={this.handleClick} onMouseOver={this.rotate} onMouseOut={this.unrotate} />
             </div>
           </li>
         );
