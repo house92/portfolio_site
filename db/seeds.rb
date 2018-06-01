@@ -29,6 +29,8 @@ Snippet.find_or_create_by(name: "Command line tool to configure Cucumber testing
 Project.find_or_create_by(name: "TechHunt", url: "#", repo: "https://github.com/house92/tech-hunt", image: "techhunt.png", description: "Individual project produced in a two-week timeframe. I focused on data visualisation and providing job search results as a map, in order to streamline the job hunt process.
 Developer jobs may be found in London and San Diego.")
 
+Project.find_or_create_by(name: "Word Attack!", url: "https://house92.github.io/WordAttack/", repo: "https://github.com/house92/word-attack", image: "word-attack.png", description: "Early static page project to produce a simple word game.")
+
 Project.find_or_create_by(name: "Dang That's Delicious!", url: "https://sh-dang-thats-delicious.herokuapp.com/", repo: "https://github.com/house92/dang-thats-delicious", image: "dang-thats-delicious.png", description: "A node site for registering places to eat and drink as well as search for and review them. Apart from node, I also used MongoDB for the database and Pug for the templates. <br /><br />The project came from a course I followed on <a href=\"https://wesbos.com/\">https://wesbos.com/</a>.")
 
 Project.find_or_create_by(name: "We Got Singles", url: "https://we-got-singles.herokuapp.com/", repo: "https://github.com/house92/wegotsingles", image: "we-got-singles.png", description: "A dating site produced in collaboration with other students in my cohort in a five-day challenge. We built it with Rails, utilising jQuery on the front end for user interactivity. I predominantly worked on the messaging system, front and back, and certain aspects of the user.")
