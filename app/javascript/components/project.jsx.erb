@@ -15,13 +15,21 @@ export default class Project extends Component {
     }
   }
 
+  image() {
+    if (this.props.project.url) {
+      return <a href={project.url}><Image src={project.fingerprinted_image} /></a>;
+    } else {
+      return <Image src={project.fingerprinted_image} />;
+    }
+  }
+
   render() {
     var project = this.props.project;
     return (
       <div className="project">
         <Row>
           <Col xs={10} xsOffset={1} md={6} mdOffset={0}>
-            <a href={project.url}><Image src={project.fingerprinted_image} /></a>
+            {this.image()}
           </Col>
           <Col xs={12} md={6} className="blurb text-center">
             <h2>{project.name}</h2>
