@@ -17,9 +17,9 @@ export default class Project extends Component {
 
   image() {
     if (this.props.project.url) {
-      return <a href={project.url}><Image src={project.fingerprinted_image} /></a>;
+      return <a href={this.props.project.url}><Image src={this.props.project.fingerprinted_image} /></a>;
     } else {
-      return <Image src={project.fingerprinted_image} />;
+      return <Image src={this.props.project.fingerprinted_image} />;
     }
   }
 
